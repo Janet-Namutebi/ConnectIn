@@ -21,7 +21,7 @@ $email = $_POST['email'];
 		/* Select queries return a resultset */
 		$result = $mysqli->query("INSERT INTO user (username,email,password) VALUES ('$username','$email','$hassedPasword')");
 		if ($result) {
-			header("Location:/connectin/index.php");
+			header("Location:index.php");
 				//header("Location:home.php");
 			
 				}
@@ -42,16 +42,22 @@ if (isset($_POST['login'])) {
          else
 	       {
 
+	       //	echo "no Missing data"; die();
+
      //check if user exits
 	       $consql = $mysqli->query("SELECT username, password FROM user WHERE username = '$username'");
 		   
 		   $count = mysqli_num_rows($consql);
+           
+		   //print_r($consql); die();
 		   
 				      if($count > 0){
 				      	
 				      	while ($rowcon =mysqli_fetch_array($consql, MYSQLI_ASSOC)) {
 				      		echo "<tr><td>" . $rowcon["username"];
+				      		//die();
 				      		$_SESSION['username'] = $username;
+				      		
 				      		header("location:home.php");
 				      	}
 				      	

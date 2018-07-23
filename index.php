@@ -12,7 +12,7 @@
 		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
 		<div class="login-form">
 			<div class="sign-in-htm">
-				<form action="./controllers/user.php" method="post">
+				<form action="user.php" method="post">
 				<div class="group">
 					<label for="user" class="label">Username</label>
 					<input id="username" type="text" name="username" class= "input"/>
@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="sign-up-htm">
-				<form method="post" action="./controllers/user.php">
+				<form method="post" action="user.php">
 				<div class="group">
 					<label for="user" class="label">Username</label>
 					<input id="Username" type="text" name="username" class="input"/>

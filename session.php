@@ -1,22 +1,15 @@
 <?php
-session_start();
-require('db.php'); //database connection
-//require('connections.php');
-   try {
-   	$user_check = $_SESSION['username'];
-   
-   $ses_sql = $mysqli->query("select username from user where username = '$user_check' ");
-   
-   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-   
-   $login_session = $row['username'];
+//session_start();
+include('connection.php'); //database connection
 
-   if(!isset($_SESSION['username'])){
-      header("location:/connectin/index.php");
-   }
-   	
-   } catch (Exception $e) {
-   	
-   }
-   
+if(isset($_SESSION["username"])) {
+         $result = mysqli_query($bd, "SELECT user_id FROM `user` WHERE `username`='".$_SESSION["username"]."' LIMIT 1");
+        
+         if(mysqli_num_rows($result)) {
+                 while($row = mysqli_fetch_array($result)) {
+                 //$login_session = $row['username'];
+                 $_SESSION["SESS_MEMBER_ID"] = $row["user_id"];
+                 }  
+             }
+         }
 ?>
