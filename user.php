@@ -1,16 +1,20 @@
 <?php 
 session_start();
-require('db.php'); //database connection
+require('connection.php'); //database connection
 
 if(isset($_POST['submit'] ))
 {
 	//declaring the variables to be stored in database
-$username = $_POST['username'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$gender = $_POST['gender'];
+$email = $_POST['email'];
+$school = $_POST['school'];
 $password = $_POST['password'];
 $pass = $_POST['pass'];
-$email = $_POST['email'];
 
-	if (isset($username) && isset($password) && isset($pass) && isset($email)) {
+
+	if (isset($firstname) && isset($password) && isset($pass) && isset($email) && isset($school) && isset($lastname) && isset($gender)) {
 		//check if the passwords match
 		if (isset($password) !== isset($pass) ) {
 			echo "<script type= 'text/javascript'>alert('the password do not match');</script>";
@@ -19,7 +23,7 @@ $email = $_POST['email'];
 		//storing values of the variables to their corresponding fields in the login table
 
 		/* Select queries return a resultset */
-		$result = $mysqli->query("INSERT INTO user (username,email,password) VALUES ('$username','$email','$hassedPasword')");
+		$result = mysqli_query($bd, "INSERT INTO user (firstname,lastname,gender,school,email,password) VALUES ('$firstname','$lastname','$gender','$school','$email','$hassedPasword')");
 		if ($result) {
 			header("Location:index.php");
 				//header("Location:home.php");
@@ -31,11 +35,12 @@ $email = $_POST['email'];
 		//login
 
 if (isset($_POST['login'])) {
-	$username = $_POST['username'];
+	$email = $_POST['email'];
     $password = $_POST['password'];
     $hasspass = md5($password);
+    echo $email;
    // check if not empty
-     if(empty($username) || empty($password))
+     if(empty($email) || empty($password))
 	       {
 		     echo "Missing data";
 	       }
@@ -45,7 +50,7 @@ if (isset($_POST['login'])) {
 	       //	echo "no Missing data"; die();
 
      //check if user exits
-	       $consql = $mysqli->query("SELECT username, password FROM user WHERE username = '$username'");
+	       $consql = mysqli_query($bd, "SELECT email, password FROM user WHERE email = '$email'");
 		   
 		   $count = mysqli_num_rows($consql);
            
@@ -54,15 +59,19 @@ if (isset($_POST['login'])) {
 				      if($count > 0){
 				      	
 				      	while ($rowcon =mysqli_fetch_array($consql, MYSQLI_ASSOC)) {
-				      		echo "<tr><td>" . $rowcon["username"];
+				      		echo "<tr><td>" . $rowcon["email"];
 				      		//die();
-				      		$_SESSION['username'] = $username;
+				      		$_SESSION['email'] = $email;
 				      		
 				      		header("location:home.php");
 				      	}
 				      	
 				       }
+				       else{
+ 	                       header("location:index.php");
+                       }
     mysqli_close($mysqli);
 	}       	
  }
+ 
 ?>

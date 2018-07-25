@@ -61,7 +61,9 @@ include('session.php');
     
     <h2>Your Charts</h2>
     <p>
-    
+    <?php 
+    include('chart.php'); 
+    ?>
     </p>
   </div>
 </div>
@@ -117,10 +119,10 @@ include('session.php');
     <p>
 
     <?php echo "<table><tr><td>";
-      echo $_SESSION['username'];
+      echo $_SESSION['email'];
       
       function logout(){
-         unset($_SESSION['username']);
+         unset($_SESSION['email']);
          header('Location: /connectin/index.php');
          exit();
        }
@@ -128,7 +130,7 @@ include('session.php');
          logout();
        }
   ?>
-           </td><td><a href="index.php?log=true">logout</a></td></tr></table>"; 
+           </td><td><a href="index.php?log=true">logout</a></td></tr></table>
       
     </p>
   </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2018 at 03:40 PM
+-- Generation Time: Jul 25, 2018 at 07:02 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -39,10 +39,7 @@ CREATE TABLE `connections` (
 --
 
 INSERT INTO `connections` (`connection_id`, `myuser_id`, `user_friend`) VALUES
-(11, '0', '0'),
-(16, 'Veron', 'Janet'),
-(17, 'Edrina', 'Janet'),
-(18, 'Edrina', 'Veron');
+(23, 'namutebi.janet@cis.mak.ac.ug', 'janetnamutebi460@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -57,14 +54,6 @@ CREATE TABLE `request` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `request`
---
-
-INSERT INTO `request` (`request_id`, `sender`, `receiver`, `date`) VALUES
-(27, 'Edrina', '3', '2018-07-23 12:57:05'),
-(28, 'Edrina', '1', '2018-07-23 12:57:09');
-
 -- --------------------------------------------------------
 
 --
@@ -73,19 +62,22 @@ INSERT INTO `request` (`request_id`, `sender`, `receiver`, `date`) VALUES
 
 CREATE TABLE `user` (
   `user_id` int(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL,
+  `school` varchar(200) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'Janet', '202cb962ac59075b964b', 'janetnamutebi460@gmail.com'),
-(2, 'Edrina', '202cb962ac59075b964b', 'nakabiri.veron@dcits.mak.ac.ug'),
-(3, 'Veron', '202cb962ac59075b964b', 'namutebi.janet@cis.mak.ac.ug');
+INSERT INTO `user` (`user_id`, `firstname`, `lastname`, `gender`, `school`, `email`, `password`, `date`) VALUES
+(5, 'Janet', 'Namutebi', 'female', 'Makerere University', 'janetnamutebi460@gmail.com', '202cb962ac59075b964b', '2018-07-25 12:44:33'),
+(9, 'Edrina', 'Nantume', 'female', 'Makerere University', 'namutebi.janet@cis.mak.ac.ug', '81dc9bdb52d04dc20036', '2018-07-25 13:33:52');
 
 --
 -- Indexes for dumped tables
@@ -117,19 +109,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `connections`
 --
 ALTER TABLE `connections`
-  MODIFY `connection_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `connection_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `request_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `request_id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -5,10 +5,10 @@
 
 
           $receiver=$_GET['send'];
-           $sender= $_SESSION["username"];
+           $sender= $_SESSION["email"];
 
 
-            $query = mysqli_query($bd, "SELECT * FROM request WHERE receiver = '" . $_SESSION["username"] . "' AND sender = '" . $_GET['send'] . "' OR receiver = '" . $_GET['send'] . "' AND sender = '" . $_SESSION["username"] . "'");
+            $query = mysqli_query($bd, "SELECT * FROM request WHERE receiver = '" . $_SESSION["email"] . "' AND sender = '" . $_GET['send'] . "' OR receiver = '" . $_GET['send'] . "' AND sender = '" . $_SESSION["email"] . "'");
 
             if(mysqli_num_rows($query) > 0){
    

@@ -6,7 +6,7 @@
 			
         $acceptfriend=$_GET['accept'];
         
-		$me= $_SESSION["username"];
+		$me= $_SESSION["email"];
 		
 
 		$addfriend = mysqli_query($bd, "INSERT INTO connections(myuser_id,user_friend) VALUES('$me','$acceptfriend') ") or die(mysql_error());

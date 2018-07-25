@@ -14,8 +14,8 @@
 			<div class="sign-in-htm">
 				<form action="user.php" method="post">
 				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="username" type="text" name="username" class= "input"/>
+					<label for="user" class="label">Email / Phone</label>
+					<input id="username" type="text" name="email" class= "input"/>
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
@@ -37,8 +37,27 @@
 			<div class="sign-up-htm">
 				<form method="post" action="user.php">
 				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="Username" type="text" name="username" class="input"/>
+					<label for="user" class="label">Firstname</label>
+					<input id="Username" type="text" name="firstname" class="input"/>
+				</div>
+				<div class="group">
+					<label for="user" class="label">Last Name</label>
+					<input id="Username" type="text" name="lastname" class="input"/>
+				</div>
+				<div class="group">
+					<label for="user" class="label">Gender</label>
+					<select name="gender">
+						<option value="female">Female</option>
+						<option value="male">Male</option>
+					</select>
+				</div>
+		        <div class="group">
+					<label for="pass" class="label">Email / Phone </label>
+					<input id="email" type="text" name="email" class="input"/>
+				</div>
+				<div class="group">
+					<label for="user" class="label">School</label>
+					<input id="Username" type="text" name="school" class="input"/>
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Password</label>
@@ -48,10 +67,7 @@
 					<label for="pass" class="label">Repeat Password</label>
 					<input id="pass2" type="password" name="pass" class="input" data-type="password"/>
 				</div>
-				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input id="email" type="text" name="email" class="input"/>
-				</div>
+
 				<div class="group">
 					<input type="submit" name="submit"class="button" value="Sign Up"/>
 				</div>
