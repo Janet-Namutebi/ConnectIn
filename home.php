@@ -26,18 +26,19 @@ include('session.php');
 <body data-spy="scroll" data-target=".navbar">
   <div id="headerSection">
   <div class="container">
-    <h1 class="brand cntr">ConnectIn</h1>
+    <h1 style="color: rgb(255,255,255);" class="brand cntr">ConnectIn</h1>
     <div class="navbar">
       <div class="nav-collapse">
         <ul class="nav">
           
-          <li class="active"><a href="#carouselSection">Charts<i class="fa fa-pie-chart" style="font-size:24px;color: rgba(25,255,255,.9);"></i></a></li>
+          <li class="active"><a href="#carouselSection">Chats<i class="fa fa-pie-chart" style="font-size:24px;color: rgba(25,255,255,.9);"></i></a></li>
           <li><a href="#ourServices">Connections<i class="fa fa-users" style="font-size:24px;color: rgba(25,255,255,.9);"></i></a></li>
           <li><a href="#portfolioSection">Notifications<i class="fa fa-bell-o" style="font-size:24px;color: rgba(25,255,255,.9);"></i></a></li>
           <li><a href="#blogSection">Profile<i class="fa fa-user-o" style="font-size:24px;color: rgba(25,255,255,.9);"></i></a></li>
           
         </ul>
         
+         
       </div>
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
@@ -50,21 +51,18 @@ include('session.php');
 
 
 <!-- Charts======================================== -->
-<div id="carouselSection" class="cntr"> 
+<div id="carouselSection"> 
 <div id="bodySection"> 
   <div class="container cntr">
-      <h4>Charts</h4>
-      <div id="testimonial" class="carousel slide">
-     
-    </div>
-
-    
-    <h2>Your Charts</h2>
-    <p>
+      <h4>Your Chat</h4>
+  <div id="testimonial" class="carousel slide">
+        <p>
     <?php 
     include('chart.php'); 
     ?>
     </p>
+     
+    </div> 
   </div>
 </div>
 </div>
@@ -72,55 +70,46 @@ include('session.php');
 <div id="ourServices"> 
 <div id="bodySection"> 
   <div class="container cntr">
-      <h4>Connections</h4>
-      <div id="testimonial" class="carousel slide">
-     
-    </div>
-
-    
-    <h2>Your Connections</h2>
-    <p>
+      <h4>Your Connections</h4>
+  <div id="testimonial" class="carousel slide">
+        <p>
     <?php 
     include('connections.php'); 
     ?>
     </p>
-  </div>
-</div>
-</div>
-<!-- Notifications======================================== -->
-<div id="bodySection"> 
-  <div class="container cntr">
-      <h4>Notifications</h4>
-      <div id="testimonial" class="carousel slide">
      
     </div>
 
     
-    <h2>Your Notifications</h2>
-    <p>
-    
-    </p>
   </div>
 </div>
-
+</div>
 <!-- Notifications======================================== -->
-<div id="portfolioSection">
+<div id="portfolioSection"> 
+<div id="bodySection"> 
+  <div class="container cntr">
+      <h4>Your Notifications</h4>
+      <div id="testimonial" class="carousel slide">
+     
+    </div>
+  
+  </div>
+</div>
+</div>
+<!-- Notifications======================================== -->
+<div id="blogSection">
 <div id="bodySection"> 
   <div class="container cntr">
       <h4>Profile</h4>
       <div id="testimonial" class="carousel slide">
-     
-    </div>
-</div>
-
-<div id="blogSection">
+    <p><?php include('profile.php');  ?></p>
     
-    <h2>Your Profile</h2>
-    <p>
+    
 
-    <?php echo "<table><tr><td>";
+    <?php echo "<p>";
+      echo "email:  ";
       echo $_SESSION['email'];
-      
+      echo "<br>";
       function logout(){
          unset($_SESSION['email']);
          header('Location: /connectin/index.php');
@@ -130,9 +119,11 @@ include('session.php');
          logout();
        }
   ?>
-           </td><td><a href="index.php?log=true">logout</a></td></tr></table>
-      
-    </p>
+         </p>
+      <div>
+        <p>  <br><a href="index.php?log=true">logout</a></p>
+      </div>
+    
   </div>
 </div>
 </div>

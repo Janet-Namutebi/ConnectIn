@@ -29,6 +29,7 @@
 				   //echo "<tr><td>Logged in as ";
 				      		echo "" . $rowcon["firstname"];
 				      		echo " " . $rowcon["lastname"];
+				      		echo "<br>studies from  <br>" . $rowcon["school"];
 				      	}
 				      	
 				       }
@@ -80,6 +81,7 @@
 						   echo"<p style='position:absolute; top:90px; left:20px; font-size:16px; color:white;'>People you may know,</p>"; 
                             
 							echo'<div align="left">'.$row['firstname']." ".$row['lastname'].'</div> ';	
+							echo "<br>studies from  <br>" . $row["school"];
 							 echo'<a href="process.php?send='.$row['email'].'" class="retweet_link"><div id="button_style1">Connect</div></a><br>';	
 							 
 							 
@@ -113,9 +115,10 @@
 										$myfriend1 = $row['user_friend'];
 										$friends = mysqli_query($bd, "SELECT * FROM user WHERE email = '$myfriend1'") or die(mysql_error());
 										while($friendsa = mysqli_fetch_array($friends)) {
-									    echo '<p style="color:blue;padding: 40px; margin: -10px 0px 0px -53px; font-size:16px;">';
+									    echo '<p style="padding: 40px; margin: -10px 0px 0px -53px; font-size:16px;">';
 										echo $friendsa['firstname'];
 										echo $friendsa['lastname'];
+										echo "<br>studies from  <br>" . $friendsa["school"];
 
 										echo '<a href="delete_friend.php?delete=' .$friendsa['email'].' ">  Unfriend</a> ';
 										  
@@ -124,9 +127,10 @@
 										$myfriend1 = $row['myuser_id'];
 										$friends = mysqli_query($bd, "SELECT * FROM user WHERE email = '$myfriend1'") or die(mysql_error());
 										while($friendsa = mysqli_fetch_array($friends)) {
-									    echo '<p style="color:blue;padding: 40px; margin: -10px 0px 0px -53px; font-size:16px;">';
+									    echo '<p style="padding: 40px; margin: -10px 0px 0px -53px; font-size:16px;">';
 										echo $friendsa['firstname'];
 										echo $friendsa['lastname'];
+										echo "<br>studies from  <br>" . $friendsa["school"];
 
 										echo '<a href="delete_friend.php?delete=' .$friendsa['email'].' ">  Unfriend</a> ';
 										echo "</p>";
@@ -166,6 +170,7 @@
 								       echo '<p style="color:blue;padding: 40px; margin: -10px 0px 0px -53px; font-size:16px;">';
                                        echo $_row['firstname'];
                                        echo $_row['lastname'];
+                                       echo "<br>studies from  <br>" . $_row["school"];
                                        echo '<br>
 										 <a href="add_friend.php?accept=' .$_row['email'].' ">Accept</a><br>
 					                     <a href="delete_friend_request.php?accept=' .$_row['email'].'">Reject</a>

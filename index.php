@@ -5,13 +5,23 @@
 	<link rel="stylesheet" type="text/css" href="./css/acs.css">
 </head>
 <body>
+<div>
+	
+</div>
 
 <div class="login-wrap">
+    
 	<div class="login-html">
+		<h1>ConnectIn</h1>
+		<p style="color: rgb(0,0,0);">ConnectIn helps you to connect with peope from different world class schools to share knowledge through disscussions and sharing pastpapers</p>
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+
 		<div class="login-form">
 			<div class="sign-in-htm">
+				<div class="group">
+					<input type="button" name ="login" class="button" value="Sign In with Facebook"/>
+				</div>
 				<form action="user.php" method="post">
 				<div class="group">
 					<label for="user" class="label">Email / Phone</label>
@@ -35,14 +45,17 @@
 				</div>
 			</div>
 			<div class="sign-up-htm">
+				<div class="group">
+					<input type="button" name ="login" class="button" value="Sign Up with Facebook"/>
+				</div>
 				<form method="post" action="user.php">
 				<div class="group">
 					<label for="user" class="label">Firstname</label>
-					<input id="Username" type="text" name="firstname" class="input"/>
+					<input type="text" name="firstname" class="input"/>
 				</div>
 				<div class="group">
 					<label for="user" class="label">Last Name</label>
-					<input id="Username" type="text" name="lastname" class="input"/>
+					<input type="text" name="lastname" class="input"/>
 				</div>
 				<div class="group">
 					<label for="user" class="label">Gender</label>
@@ -71,12 +84,9 @@
 				<div class="group">
 					<input type="submit" name="submit"class="button" value="Sign Up"/>
 				</div>
-
 				</form>
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<label for="tab-1">Already Member?</a>
-				</div>
+	          
+				
 			</div>
 		</div>
 	</div>

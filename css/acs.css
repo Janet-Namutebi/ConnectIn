@@ -1,7 +1,8 @@
 body{
-	margin:0;
-	background:#fff;
-	font:600 16px/18px 'Open Sans',Arial;
+	margin:5px;
+	color:#ffffff;
+	background:#ffffff;
+	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
@@ -14,15 +15,17 @@ a{color:inherit;text-decoration:none}
 	max-width:525px;
 	min-height:670px;
 	position:relative;
-	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+	right: 180px;
+	background-image: url("http://localhost/connectin/images/share.jpg");
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
 	width:100%;
 	height:100%;
 	position:absolute;
-	padding:90px 70px 50px 70px;
-	background:rgba(51,168,255,.9);
+	left: 400px;
+	padding:50px 70px 50px 70px;
+	background:rgba(50,168,255,.9);
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -41,23 +44,22 @@ a{color:inherit;text-decoration:none}
 	display:none;
 }
 .login-html .tab,
-.login-form .group .label,
+
 .login-form .group .button{
 	text-transform:uppercase;
 }
 .login-html .tab{
-	font-size:22px;
+	font-size:12px;
 	margin-right:15px;
 	padding-bottom:5px;
 	margin:0 15px 10px 0;
 	display:inline-block;
-	border-bottom:2px solid transparent;
+	border-bottom:3px solid transparent;
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
-	color:rgba(51,168,255,.9);
-	border-color:rgba(51,168,255,.9);
-
+	color:#fff;
+	border-color:#1161ee;
 }
 .login-form{
 	min-height:345px;
@@ -78,7 +80,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .input,
 .login-form .group .button{
 	border:none;
-	padding:15px 20px;
+	padding:5px 25px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
 }
@@ -123,7 +125,6 @@ a{color:inherit;text-decoration:none}
 }
 .login-form .group .check:checked + label{
 	color:#fff;
-	
 }
 .login-form .group .check:checked + label .icon{
 	background:#1161ee;
@@ -148,53 +149,4 @@ a{color:inherit;text-decoration:none}
 }
 .foot-lnk{
 	text-align:center;
-}
-
-/* home page css color:#6a6f8c;*/
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: rgba(51,168,255,.9);
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 150px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-/* responsiveness */
-@media screen and (max-width: 900px) {
-	.tab button {
-    cursor: pointer;
-    padding: 14px 40px;
-    transition: 0.3s;
-    font-size: 12px;
-}
-  .users th {
-	background-color: rgba(51,168,255,.9);
-	padding: 0px 20px 0px;
-	margin: 10px;
 }
